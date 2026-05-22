@@ -1,0 +1,148 @@
+# queries.toml — 20 hand-labelled retrieval queries
+# Each query lists the doc_ids that must appear in top-5 (at least one).
+# hard = true marks the 5 deliberately difficult queries.
+
+# ── Easy queries (15) ────────────────────────────────────────────────────────
+
+[[query]]
+id = 1
+text = "Formula One motor racing world championship"
+relevant_ids = [232, 146]
+hard = false
+note = "Direct title match — baseline sanity check for all configs"
+
+[[query]]
+id = 2
+text = "UFC mixed martial arts heavyweight fights"
+relevant_ids = [227, 195]
+hard = false
+note = "UFC page is in corpus; martial arts is a parent category"
+
+[[query]]
+id = 3
+text = "Olympic Games summer sports international competition"
+relevant_ids = [228, 1]
+hard = false
+note = "Olympic Games page plus the federation overview"
+
+[[query]]
+id = 4
+text = "FIFA World Cup football tournament"
+relevant_ids = [229, 18]
+hard = false
+note = "World Cup and association football both in corpus"
+
+[[query]]
+id = 5
+text = "Tour de France cycling race stages France"
+relevant_ids = [233, 124]
+hard = false
+note = "Tour de France page is exact; cycling is the parent"
+
+[[query]]
+id = 6
+text = "Wimbledon tennis grand slam grass court"
+relevant_ids = [234, 50]
+hard = false
+note = "Wimbledon Championships page plus Tennis"
+
+[[query]]
+id = 7
+text = "NBA Finals basketball championship series"
+relevant_ids = [235, 6]
+hard = false
+note = "NBA Finals and Basketball both present"
+
+[[query]]
+id = 8
+text = "Isle of Man TT motorcycle race tourist trophy"
+relevant_ids = [231]
+hard = false
+note = "Isle of Man TT page has 'Tourist Trophy' in opening sentence"
+
+[[query]]
+id = 9
+text = "cricket test match England Australia series"
+relevant_ids = [238, 57]
+hard = false
+note = "The Ashes is England vs Australia test cricket"
+
+[[query]]
+id = 10
+text = "Boston Marathon road running race Massachusetts"
+relevant_ids = [239]
+hard = false
+note = "Boston Marathon page describes Patriots Day race in Massachusetts"
+
+[[query]]
+id = 11
+text = "Super Bowl American football championship game"
+relevant_ids = [230, 82]
+hard = false
+note = "Super Bowl page and American football both in corpus"
+
+[[query]]
+id = 12
+text = "who invented volleyball and what was it originally called"
+relevant_ids = [95]
+hard = false
+note = "William G. Morgan invented volleyball, originally called Mintonette"
+
+[[query]]
+id = 13
+text = "perfect score gymnastics ten point routine Olympics"
+relevant_ids = [178]
+hard = false
+note = "Perfect 10 (gymnastics) page covers the 10.000 score"
+
+[[query]]
+id = 14
+text = "tennis match scoring sets games love deuce"
+relevant_ids = [54]
+hard = false
+note = "Tennis scoring system page covers love, deuce, sets, games"
+
+[[query]]
+id = 15
+text = "rugby union laws gameplay positions"
+relevant_ids = [77, 81, 80]
+hard = false
+note = "Rugby union, gameplay, and laws pages all relevant"
+
+# ── Hard queries (5) ─────────────────────────────────────────────────────────
+# Paraphrased, multi-hop, or ambiguous — designed to stress each config.
+
+[[query]]
+id = 16
+text = "annual race held on an island known for dangerous road circuit since 1907"
+relevant_ids = [231]
+hard = true
+note = "Paraphrase of Isle of Man TT — no keywords overlap with title; tests semantic retrieval"
+
+[[query]]
+id = 17
+text = "sport combining board game with combat until checkmate or knockout"
+relevant_ids = [116]
+hard = true
+note = "Chess boxing described as alternating blitz chess and boxing rounds — zero title overlap"
+
+[[query]]
+id = 18
+text = "cyclist awarded yellow jersey leading general classification"
+relevant_ids = [233]
+hard = true
+note = "Yellow jersey / maillot jaune is Tour de France specific — not mentioned in title"
+
+[[query]]
+id = 19
+text = "oldest grand slam tennis tournament played on grass courts in London"
+relevant_ids = [234]
+hard = true
+note = "Multi-attribute paraphrase of Wimbledon; 'oldest grand slam' requires inference"
+
+[[query]]
+id = 20
+text = "satirical obituary gave name to biennual cricket rivalry between two nations"
+relevant_ids = [238]
+hard = true
+note = "The Ashes origin story — body text only, title gives nothing away"
