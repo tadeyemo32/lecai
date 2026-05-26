@@ -1,4 +1,4 @@
-# LEC AI: Retrieval System (Assignment 1)
+# LAC AI: Retrieval System (Assignment 1)
 
 ## Why I picked this assignment
 
